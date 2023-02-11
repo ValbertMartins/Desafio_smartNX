@@ -8,13 +8,6 @@ type Props = {
 const ContentList = ({ peopleList }: Props) => {
   return (
     <div>
-      <Summary>
-        <p>Nome</p>
-        <p>Gênero</p>
-        <p>Altura</p>
-        <p>Cor do cabelo</p>
-      </Summary>
-
       {peopleList.map((people, index) => {
         return (
           <ContainerItem key={people.name}>

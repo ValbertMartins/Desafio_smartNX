@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { PeopleListProps } from "../../App"
 import ContentList from "../contentList"
+import { Summary } from "../contentList/styles"
+import Loading from "../loading"
 import { Container, Title } from "./styles"
 
 type Props = {
@@ -26,7 +28,14 @@ const MainContent = ({ peopleList, isLoading }: Props) => {
         value={name}
       />
 
-      {isLoading ? "Loading" : <ContentList peopleList={peopleFilteredList} />}
+      <Summary>
+        <p>Nome</p>
+        <p>Gênero</p>
+        <p>Altura</p>
+        <p>Cor do cabelo</p>
+      </Summary>
+
+      {isLoading ? <Loading /> : <ContentList peopleList={peopleFilteredList} />}
     </Container>
   )
 }
