@@ -11,7 +11,7 @@ const MainContent = ({ peopleList }: Props) => {
   const [name, setName] = useState("")
 
   const peopleFilteredList = peopleList.filter(people =>
-    people.name.toLowerCase().includes(name.toLowerCase())
+    people.name.toLowerCase().includes(name.toLowerCase().trim())
   )
 
   return (
@@ -22,6 +22,7 @@ const MainContent = ({ peopleList }: Props) => {
         <input
           type="text"
           onChange={({ target }) => setName(target.value)}
+          placeholder="filtre..."
           value={name}
         />
       </Header>

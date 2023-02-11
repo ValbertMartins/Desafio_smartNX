@@ -2,9 +2,12 @@ import { useEffect, useState } from "react"
 import { Pagination } from "./components/pagination"
 import MainContent from "./components/mainContent"
 import { Container } from "./styles/global"
+import { requestPeople } from "./services/api"
 
 export type PeopleListProps = {
   name: string
+  birth_year: string
+  gender: string
 }[]
 
 function App() {
@@ -12,9 +15,7 @@ function App() {
   const [currentPageIndex, setCurrentPageIndex] = useState(1)
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/?page=${currentPageIndex}`)
-      .then(response => response.json())
-      .then(data => setPeopleList(data.results))
+    requestPeople(currentPageIndex).then(data => setPeopleList(data))
   }, [currentPageIndex])
 
   return (

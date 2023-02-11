@@ -13,5 +13,8 @@ export const ContainerItem = styled.div`
 
 export const Name = styled.p`
   font-size: 1.8rem;
-  margin: 1rem;
+  margin: 0.8rem 0.5rem;
+`
+export const Gender = styled.p`
+  margin: 0.5rem;
 `
