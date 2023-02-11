@@ -7,13 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
-  body {
-    background-color: #C4AD9B;
-  }
+  
 `
 export const Container = styled.section`
-  background-color: #c4ad9b;
-  height: 100vh;
-  max-width: 1000px;
+  height: 101vh;
+  max-width: 1700px;
   margin: 0 auto;
 `

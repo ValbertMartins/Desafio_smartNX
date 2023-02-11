@@ -8,14 +8,21 @@ type Props = {
 export const Pagination = ({ currentPageIndex, setCurrentPageIndex }: Props) => {
   return (
     <Container>
-      {currentPageIndex > 1 && (
-        <button onClick={() => setCurrentPageIndex(value => value - 1)}>Anterior</button>
-      )}
-      {currentPageIndex}
+      <button
+        onClick={() => setCurrentPageIndex(value => value - 1)}
+        disabled={currentPageIndex === 1}
+      >
+        Anterior
+      </button>
 
-      {currentPageIndex < 9 && (
-        <button onClick={() => setCurrentPageIndex(value => value + 1)}>Próximo</button>
-      )}
+      <p>{currentPageIndex}</p>
+
+      <button
+        onClick={() => setCurrentPageIndex(value => value + 1)}
+        disabled={currentPageIndex === 9}
+      >
+        Próximo
+      </button>
     </Container>
   )
 }

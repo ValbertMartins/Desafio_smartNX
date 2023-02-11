@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { PeopleListProps } from "../../App"
 import ContentList from "../contentList"
-import { Container, Header, Title } from "./styles"
+import { Container, Title } from "./styles"
 
 type Props = {
   peopleList: PeopleListProps
+  isLoading: boolean
 }
 
-const MainContent = ({ peopleList }: Props) => {
+const MainContent = ({ peopleList, isLoading }: Props) => {
   const [name, setName] = useState("")
 
   const peopleFilteredList = peopleList.filter(people =>
@@ -16,18 +17,16 @@ const MainContent = ({ peopleList }: Props) => {
 
   return (
     <Container>
-      <Header>
-        <Title>Desafio SmartNX</Title>
+      <Title>Desafio SmartNX</Title>
 
-        <input
-          type="text"
-          onChange={({ target }) => setName(target.value)}
-          placeholder="filtre..."
-          value={name}
-        />
-      </Header>
+      <input
+        type="text"
+        onChange={({ target }) => setName(target.value)}
+        placeholder="filtre..."
+        value={name}
+      />
 
-      <ContentList peopleList={peopleFilteredList} />
+      {isLoading ? "Loading" : <ContentList peopleList={peopleFilteredList} />}
     </Container>
   )
 }

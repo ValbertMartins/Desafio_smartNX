@@ -8,19 +8,31 @@ export type PeopleListProps = {
   name: string
   birth_year: string
   gender: string
+  height: string
+  hair_color: string
 }[]
 
 function App() {
   const [peopleList, setPeopleList] = useState<PeopleListProps | []>([])
   const [currentPageIndex, setCurrentPageIndex] = useState(1)
+  const [isLoading, setIsLoading] = useState(true)
+
+  console.log(isLoading)
 
   useEffect(() => {
-    requestPeople(currentPageIndex).then(data => setPeopleList(data))
+    setIsLoading(true)
+    requestPeople(currentPageIndex).then(data => {
+      setPeopleList(data)
+      setIsLoading(false)
+    })
   }, [currentPageIndex])
 
   return (
     <Container>
-      <MainContent peopleList={peopleList} />
+      <MainContent
+        peopleList={peopleList}
+        isLoading={isLoading}
+      />
 
       <Pagination
         currentPageIndex={currentPageIndex}

@@ -1,6 +1,5 @@
-import React from "react"
 import { PeopleListProps } from "../../App"
-import { Container, ContainerItem, Gender, Name } from "./styles"
+import { ContainerItem, Summary } from "./styles"
 
 type Props = {
   peopleList: PeopleListProps
@@ -8,16 +7,25 @@ type Props = {
 
 const ContentList = ({ peopleList }: Props) => {
   return (
-    <Container>
-      {peopleList.map(people => {
+    <div>
+      <Summary>
+        <p>Nome</p>
+        <p>Gênero</p>
+        <p>Altura</p>
+        <p>Cor do cabelo</p>
+      </Summary>
+
+      {peopleList.map((people, index) => {
         return (
           <ContainerItem key={people.name}>
-            <Name>{people.name}</Name>
-            <Gender>Gênero:{people.gender}</Gender>
+            <p>{people.name}</p>
+            <p>{people.gender}</p>
+            <p>{people.height}</p>
+            <p>{people.hair_color}</p>
           </ContainerItem>
         )
       })}
-    </Container>
+    </div>
   )
 }
 

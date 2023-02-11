@@ -1,20 +1,26 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
-  padding: 3%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-`
 export const ContainerItem = styled.div`
   background-color: #fff;
   border-radius: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  cursor: pointer;
+  transition: 100ms;
+  :hover {
+    background-color: #edf3ff;
+  }
+  p {
+    margin: 0.8rem 0.5rem;
+  }
 `
 
-export const Name = styled.p`
-  font-size: 1.8rem;
-  margin: 0.8rem 0.5rem;
-`
-export const Gender = styled.p`
-  margin: 0.5rem;
+export const Summary = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem 1.5rem;
+  font-weight: bold;
 `
