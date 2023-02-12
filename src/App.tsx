@@ -17,8 +17,6 @@ function App() {
   const [currentPageIndex, setCurrentPageIndex] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
 
-  console.log(isLoading)
-
   useEffect(() => {
     setIsLoading(true)
     requestPeople(currentPageIndex).then(data => {
