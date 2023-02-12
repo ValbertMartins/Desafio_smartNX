@@ -1,5 +1,5 @@
 import { PeopleListProps } from "../../App"
-import { ContainerItem, Summary } from "./styles"
+import { ContainerItem } from "./styles"
 
 type Props = {
   peopleList: PeopleListProps

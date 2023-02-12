@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { PeopleListProps } from "../../App"
 import ContentList from "../contentList"
-import { Summary } from "../contentList/styles"
+import { Summary } from "./styles"
 import Loading from "../loading"
 import { Container, Title } from "./styles"
 
@@ -24,7 +24,7 @@ const MainContent = ({ peopleList, isLoading }: Props) => {
       <input
         type="text"
         onChange={({ target }) => setName(target.value)}
-        placeholder="filtre..."
+        placeholder="filtro..."
         value={name}
       />
 
